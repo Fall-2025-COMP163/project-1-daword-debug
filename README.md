@@ -97,3 +97,18 @@ Modifying protected files will result in automatic academic integrity violation
 Implementation (70%): Function correctness, file operations, error handling
 
 Interview (30%): Code explanation and live coding challenge
+
+README REquirements:
+My​‍​‌‍​‍‌ stat formulas are designed to align with the classic RPG archetypes.
+Warrionrs are made to have a big health and a high strength with a little magic.
+Mages develop their magic power very fast but are weak in terms of health.
+Rogues have a balance of both magic and strength with a moderate growth plan.
+Clerics (the default class) become both physically and magically strong to be able to ​‍​‌‍​‍‌support.
+Bonus Features:
+Do not have any bonous features.
+AI Usage: 
+AI​‍​‌‍​‍‌ was used to help organize the file handling part of my save_character function and to make sure that it passed all
+error-handling tests without the use of try/except or directory operations. The AI also checked the code for ​‍​‌‍​‍‌formatting
+consistency.
+How to run:
+project1_starter.py
