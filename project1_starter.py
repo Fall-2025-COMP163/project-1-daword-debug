@@ -19,7 +19,7 @@ def create_character(name, char_class):
         strength = 5
         magic = 15
         health = 80
-    elif char_class.lower() == "rougue":
+    elif char_class.lower() == "rogue":
         strength = 10
         magic = 8
         health = 100
@@ -46,12 +46,11 @@ def create_character(name, char_class):
     char = create_character("Aria", "Mage")
     
     
-    
     # Should return: {"name": "Aria", "class": "Mage", "level": 1, "strength": 5, "magic": 15, "health": 80, "gold": 100}
     """
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
-    pass
+    
 
 
 def calculate_stats(char_class, level):
@@ -89,7 +88,7 @@ def calculate_stats(char_class, level):
     """
     # TODO: Implement this function
     # Return a tuple: (strength, magic, health)
-    pass
+    
 
 def save_character(character, filename):
     required_keys = ["name", "class", "level", "strength", "magic", "health", "gold"]
@@ -97,7 +96,12 @@ def save_character(character, filename):
         if key not in character:
             print(f"Missing key: {key}")
             return False 
-        
+    
+    # Checks if the file has a directory chat help me out with this
+    if "/" in filename or "\\" in filename:
+        print("Invalid path.")
+        return False
+
     file = open(filename, "w")
     file.write(f"Character Name: {character['name']}\n")
     file.write(f"Class: {character['class']}\n")
@@ -125,10 +129,11 @@ def save_character(character, filename):
     """
     # TODO: Implement this function
     # Remember to handle file errors gracefully
-    pass
+    
+
 
 import os
-
+#chat help me out wiht this checking if file exists
 def load_character(filename):
     if not os.path.exists(filename):
         print("file not here.")
@@ -163,9 +168,13 @@ def load_character(filename):
     """
     # TODO: Implement this function
     # Remember to handle file not found errors
-    pass
+    
+
 
 def display_character(character):
+    if not character:
+        print("Not a character.")
+
     print("=== CHARACTER SHEET ===")
     print(f"Name: {character['name']}")
     print(f"Class: {character['class']}")
@@ -190,7 +199,8 @@ def display_character(character):
     Gold: 100
     """
     # TODO: Implement this function
-    pass
+    
+
 
 def level_up(character):
     character["level"] += 1
@@ -209,15 +219,17 @@ def level_up(character):
     """
     # TODO: Implement this function
     # Remember to recalculate stats for the new level
-    pass
+    
+
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
     print("=== CHARACTER CREATOR ===")
     print("Test your functions here!")
     
+    
     # Example usage:
-    # char = create_character("TestHero", "Warrior")
-    # display_character(char)
-    # save_character(char, "my_character.txt")
-    # loaded = load_character("my_character.txt")
+    char = create_character("TOP", "cleric")
+    display_character(char)
+    save_character(char, "my_character.txt")
+    loaded = load_character("my_character.txt")
